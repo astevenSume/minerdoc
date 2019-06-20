@@ -1,0 +1,3357 @@
+{
+	"info": {
+		"_postman_id": "366f9224-cf3c-4271-97cb-bc5fe965662f",
+		"name": "前端接口 copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "客户端-验证码",
+			"item": [
+				{
+					"name": "客户端-验证码",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d3c8d880-14ca-4247-9d4d-d811822491f7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"description": "app",
+								"key": "client-type",
+								"type": "text",
+								"value": "app"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"national_code\": \"86\",\r\n  \"action\": \"login\",\r\n  \"mobile\": \"15594978574\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/sms/sendcode",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"sms",
+								"sendcode"
+							]
+						},
+						"description": "sendcode"
+					},
+					"response": []
+				},
+				{
+					"name": "登录图形码验证",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d3c8d880-14ca-4247-9d4d-d811822491f7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "client-type",
+								"type": "text",
+								"value": "app"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/user/captcha?national_code=86&mobile=13012345678&out=png",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"captcha"
+							],
+							"query": [
+								{
+									"key": "national_code",
+									"value": "86"
+								},
+								{
+									"key": "mobile",
+									"value": "13012345678"
+								},
+								{
+									"key": "out",
+									"value": "png"
+								}
+							]
+						},
+						"description": "sendcode"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "客户端-用户相关",
+			"item": [
+				{
+					"name": "更新用户信息",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5d553454-6b54-433e-b8f8-98b19ac09b54",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "client-type",
+								"type": "text",
+								"value": "app"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\":\"root\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/user/info?=",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"info"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取用户信息",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bd682f5d-0521-4ff9-af5e-3bc692c60123",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "client-type",
+								"type": "text",
+								"value": "app"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"email\":\"root@gmail\",\r\n\t\"password\": \"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/user/info?=",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"info"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "用户登录或者注册",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "828f8138-dfb9-42e0-bcdb-2839f7817cab",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client-type",
+								"value": "app",
+								"description": "web",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"national_code\":\"+86\",\r\n\t\"mobile\": \"13012341234\",\r\n\t\"verify_code\":\"9078\",\r\n\t\"invite_code\":\"\",\r\n\t\"nick\":\"nick000\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/user/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"login"
+							]
+						},
+						"description": "192.168.2.13/v1/admin/login"
+					},
+					"response": []
+				},
+				{
+					"name": "退出登录",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "78001be7-8ba0-47a4-9e3a-8ba823207a81",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/user/logout?=",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "客户端重置token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ccb4cb35-279a-49e8-b947-90d0c6af8260",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/user/relogin",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"relogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "签名认证登录",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"uid\": \"166717822901157888\",\n\t\"timestamp\": 1554627005,\n\t\"signature\":\"b6efb4f6b9ef56b1e2f13f2801987b50\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/user/sign",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"sign"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "邀请返佣2",
+			"item": [
+				{
+					"name": "获取代理信息1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d72f84c1-7071-428d-a061-a6d08238cd3d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/agent?=",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"agent"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取指定渠道代理信息",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b2a4767b-db7b-4795-aa04-85f28c11aa13",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/agent/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"agent",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "返佣提现1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bef36acd-d2dd-405d-832c-39cf37eb07e3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/agent/withdraws",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"agent",
+								"withdraws"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取所有返佣提现记录",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e66fad45-7e2c-4f21-b67e-f11196be3b14",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/agent/withdraws?=",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"agent",
+								"withdraws"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取返佣提现记录",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b4aed18c-e9c9-435a-8449-ef49b5a77ad4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"channel_id\": 123456,\r\n  \"amount\": \"0.05\",\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/agent/withdraws",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"agent",
+								"withdraws"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "基础信息",
+			"item": [
+				{
+					"name": "获取参考价格",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cb638cb5-cdb5-4ff4-941a-d3ee0e3a6665",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/common/price",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"common",
+								"price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取当前系统时间",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "407a5770-47b0-457a-a416-d61ba1851d5a",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/common/timestamp",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"common",
+								"timestamp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取版本",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "afdf9339-0f24-4977-af2e-c20b0bb6e04d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/common/android/version",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"common",
+								"android",
+								"version"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取通用信息",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "afdf9339-0f24-4977-af2e-c20b0bb6e04d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/common",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"common"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "eos账户2",
+			"item": [
+				{
+					"name": "EUSD 账户详情",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "55ffe31b-5f0c-42e7-85e3-66aa24be5beb",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/eos",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"eos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "给手机号转账 EUSD1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6b6bec58-9567-4208-8a00-4a691e824195",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"national_code\": \"+86\",\r\n  \"mobile\": \"13012341234\",\r\n  \"amount\": 500,\r\n  \"memo\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/eos/transfer",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"eos",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取所有财务记录列表1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/eos/records",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"eos",
+								"records"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取财务记录列表1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/eos/records/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"eos",
+								"records",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "承兑商",
+			"item": [
+				{
+					"name": "OTC用户出售（承兑商购买）",
+					"item": [
+						{
+							"name": "设置购买",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "79ca3a89-0328-483f-bba9-b5f20aa021d4",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client-type",
+										"value": "app",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"able\":true,\n\t\"lower_limit\": 10000,\n\t\"day_limit\": 5000000,\n\t\"pay_type\":[1,2,4]\n}"
+								},
+								"url": {
+									"raw": "{{host}}/v1/sell/start",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"sell",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "下单",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ed78647f-f734-430d-8d98-97c9a3c78cb1",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client-type",
+										"value": "app",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"quantity\": 10000000,\n\t\"pay_id\": 168690775981293568,\n\t\"token\": \"805229482124993\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}/v1/sell",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"sell"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "确认支付（承兑商）",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9101bc75-86ba-4211-bc38-0c28d102718e",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client-type",
+										"value": "app",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{host}}/v1/sell/167115024307847168/pay",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"sell",
+										"167115024307847168",
+										"pay"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "确认收款（用户）",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "58331e03-4932-40f3-8d1c-933f8c8f80b9",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client-type",
+										"type": "text",
+										"value": "app"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{host}}/v1/sell/166477112788647936/confirm",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"sell",
+										"166477112788647936",
+										"confirm"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取消订单（承兑商）",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c53d580e-e115-4af1-80ab-a801a37fd796",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client-type",
+										"type": "text",
+										"value": "app"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{host}}/v1/buy/165449135284027392/cancel",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"buy",
+										"165449135284027392",
+										"cancel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "出售列表",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client-type",
+										"value": "app",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{host}}/v1/sell/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"sell",
+										"list"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "OTC用户购买（承兑商出售）",
+					"item": [
+						{
+							"name": "承兑商设置出售（开启、关闭）",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "af4368fb-d937-49f8-8ab9-99a58f9ad3f0",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client-type",
+										"value": "app",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"able\":true,\n\t\"lower_limit\": 200000,\n\t\"day_limit\": 30000\n}"
+								},
+								"url": {
+									"raw": "{{host}}/v1/buy/start",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"buy",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "下单",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "505fa8a5-e0a3-4919-8a17-2b564a433fc8",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client-type",
+										"value": "app",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"funds\":30000,\n\t\"pay_id\":166454986857775104\n}"
+								},
+								"url": {
+									"raw": "{{host}}/v1/buy",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"buy"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "确认支付（用户）",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1e83314f-e248-4579-96dd-b6f54aac038b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client-type",
+										"value": "app",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{host}}/v1/buy/166468621701218304/pay",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"buy",
+										"166468621701218304",
+										"pay"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "确认收款（承兑商）",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "803be6a7-e66c-456a-814a-e9fc92f854a0",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client-type",
+										"type": "text",
+										"value": "app"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{host}}/v1/buy/166468621701218304/confirm",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"buy",
+										"166468621701218304",
+										"confirm"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取消订单（用户）",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "95c5bdf2-7b21-45f8-b705-a37970dd7e4e",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client-type",
+										"type": "text",
+										"value": "app"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{host}}/v1/buy/165449135284027392/cancel",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"buy",
+										"165449135284027392",
+										"cancel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "购买列表",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client-type",
+										"value": "app",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{host}}/v1/buy/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"buy",
+										"list"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "申请成为承兑商",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ebc6da01-6917-45bf-9da5-7c7913ca2018",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"wechat\":\"wwwxxxx\",\n\t\"mobile\":\"13012341234\",\n\t\"telegram\":\"zzzzzzz\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/exchange/apply",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"exchange",
+								"apply"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "承兑商资产信息",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9ad19e8b-077a-4e18-a4e1-f0fa77aa04f4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/exchange/info",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"exchange",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "划转-用户账户转入OTC账户",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "95b1282c-e6d5-429e-95d9-ccf56bbe1af3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": \"100\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/exchange/transferInto",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"exchange",
+								"transferInto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "划转-OTC账户转入用户账户",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e1d847c7-d756-444f-9df6-e01113063854",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 1245\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/exchange/transferOut",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"exchange",
+								"transferOut"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "通知2",
+			"item": [
+				{
+					"name": "获取通知统计1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/notification/statistics",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"notification",
+								"statistics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取通知列表1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/notifications?client-type=app",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"notifications"
+							],
+							"query": [
+								{
+									"key": "client-type",
+									"value": "app"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "otc订单",
+			"item": [
+				{
+					"name": "查询所有订单",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "36a589f1-6ff5-4ad2-874c-b127a2857550",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/orders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取订单详情",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5fba53d2-4fc8-443f-a92e-9ac9288edb5e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/orders/165449135284027392",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"orders",
+								"165449135284027392"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "创建申诉1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cb72825e-5537-43f7-9210-e84ab5150f6f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"type\":1,\r\n \"context\": \"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/orders/888/appeal",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"orders",
+								"888",
+								"appeal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "解决申述1",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/orders/888/appeal",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"orders",
+								"888",
+								"appeal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取订单聊天",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0083c0ed-b80e-4dc1-95c1-5f0259d29f9c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/orders/165449135284027392/messages",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"orders",
+								"165449135284027392",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取订单聊天系统消息",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d930a4d2-6ba2-46fe-aa88-597ac6537cee",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/orders/common_messages",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"orders",
+								"common_messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "客户端新增聊天",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"order_id\": 12345,\n    \"uid\": 1234,\n    \"msg_type\": \"system\",\n    \"content\": \"created\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/orders/add_msg",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"orders",
+								"add_msg"
+							]
+						},
+						"description": "新增msg"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "收付款方式",
+			"item": [
+				{
+					"name": "获取所有收付款方式",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a35c9ade-4be6-4573-ac7d-c795f3fad40f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/payment-methods",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"payment-methods"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取收付款方式",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c43a305f-4fda-4f82-afb8-ca86a217bd4c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/payment-methods/165756416177471488",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"payment-methods",
+								"165756416177471488"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "添加收付款方式",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "08d9fadb-d45d-40cd-bb02-fe46080f1004",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\":2,\n\t\"name\":\"支付宝\",\n\t\"account\":\"taobao.com\",\n\t\"bank\":\"\",\n\t\"bank_branch\":\"\",\n\t\"qr_code\":\"url\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/payment-methods",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"payment-methods"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "编辑收付款方式",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b9401a78-36a7-4df7-9bdd-bbd5bb52e3b9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mtype\": 4,\n    \"name\": \"张三银行卡1\",\n    \"account\": \"6200017645125564535\",\n    \"bank\": \"工商银行\",\n    \"bank_branch\": \"思明支行\",\n    \"low_money_per_tx_limit\": 15000,\n    \"high_money_per_tx_limit\": 5000000,\n    \"times_per_day_limit\": 10,\n\t\"money_per_day_limit\": 50000001,\n    \"money_sum_limit\": 50000000\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/payment-methods/165756416177471488",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"payment-methods",
+								"165756416177471488"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "启用收付款方式",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a1be7721-9b66-4e74-ba8f-bf844599b2fd",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/payment-methods/165756416177471488/activate",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"payment-methods",
+								"165756416177471488",
+								"activate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "禁用收付款方式",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2dbd5d0c-7802-4fcc-93ed-4c2d398112f4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/payment-methods/165756416177471488/deactivate",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"payment-methods",
+								"165756416177471488",
+								"deactivate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "禁用收付款方式 Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2dbd5d0c-7802-4fcc-93ed-4c2d398112f4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/payment-methods/165756416177471488/deactivate",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"payment-methods",
+								"165756416177471488",
+								"deactivate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除收付款方式",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f9948247-9f31-4a7e-b0e0-05cea9761ad8",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/payment-methods/165756416177471488",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"payment-methods",
+								"165756416177471488"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "收付款方式重排序",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5479a48f-71ac-44e9-b557-dc759cc2adf5",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\":[\n\t\t{\n\t\t\t\"id\":165756458745462784,\n\t\t\t\"ord\":1\n\t\t},\n\t\t{\n\t\t\t\"id\":165756458745462784,\n\t\t\t\"ord\":2\n\t\t}\n\t\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/payment-methods/reorder",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"payment-methods",
+								"reorder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "配置4",
+			"item": [
+				{
+					"name": "获取所有配置",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a17e68ad-e329-44da-aff1-e5c22fa2e5d6",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/settings?page=1&per_page=10",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"settings"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取某个配置",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/settings/{setting}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"settings",
+								"{setting}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新某个配置",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/settings/{setting}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"settings",
+								"{setting}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除某个配置",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/settings/{setting}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"settings",
+								"{setting}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "usdt账户详情7",
+			"item": [
+				{
+					"name": "USDT 账户详情",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6e1692d0-5df0-4a3e-a92a-b1b2033741ca",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/usdt",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"usdt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "USDT 账户余额",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1a484bae-805c-40c6-ba22-78254733aaa5",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/usdt/balance",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"usdt",
+								"balance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "给钱包地址转账 USDT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "26a8a5d9-c575-4a04-93bc-e4d615e3a5d9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/usdt/transfer",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"usdt",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "抵押 USDT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "795f69ee-722b-4e2a-b3a9-3de7b8e70e04",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/usdt/mortgage",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"usdt",
+								"mortgage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "赎回 USDT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d36356e9-791b-4670-81b8-4088c61132ce",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/usdt/release",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"usdt",
+								"release"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取所有财务记录列表1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "72e6765d-80e2-480d-9ce1-a8a009c9541e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/eos/records",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"eos",
+								"records"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取财务记录列表1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e75713b6-fcca-49c7-bdbb-ced65c085969",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/eos/records/{id}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"eos",
+								"records",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test 测试接口",
+			"item": [
+				{
+					"name": "成为承兑商",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/test/becomeExchanger",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"test",
+								"becomeExchanger"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "充值100Token",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/test/eos",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"test",
+								"eos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "生成随机EOS账号，需要有EOS账号，才能被绑定",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/test/createAccount",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"test",
+								"createAccount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "游戏",
+			"item": [
+				{
+					"name": "游戏登录",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7f8d8937-f77d-43cc-836e-a9c8d57910e9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"channel_id\" : 1,\r\n    \"mask_id\": 324\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/game/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"game",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "广告",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51f3f0e8-0e5d-4348-b2d1-70f7b0657f22",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/banners",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"banners"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "应用",
+			"item": [
+				{
+					"name": "获取应用列表",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "04d01751-fd89-475d-a72b-7023c189af22",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/apps",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"apps"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "支付密码",
+			"item": [
+				{
+					"name": "支付密码设置（原密码验证）",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "59a5998f-0110-4860-bd05-f07c485921dd",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "client-type",
+								"value": "app"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"method\": 1,\n\t\"oldpwd\": \"123123\",\n\t\"newpwd\": \"111111\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/payment-password/setpassword",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"payment-password",
+								"setpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "验证码方式修改支付密码",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "96a1b18c-69c7-45f1-b67f-bd1f4495dec3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"method\": 2,\n\t\"verify_code\": \"123123\",\n\t\"newpwd\": \"123123\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/v1/payment-password/setpassword",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"payment-password",
+								"setpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取支付密码状态",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d27fc56d-7d66-4796-85f4-5862aaa73290",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "app"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/v1/payment-password/status",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"payment-password",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
